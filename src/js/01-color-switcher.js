@@ -5,9 +5,16 @@ const body = document.querySelector('body');
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-const startClick = () => {
-  const randomColor = getRandomHexColor();
-  body.style.backgroundColor = randomColor;
-};
+
+function colorSwitch() {
+  body.style.backgroundColor = getRandomHexColor();
+}
+
+function startClick() {
+  setTimeout(() => {
+    colorSwitch;
+  }, 1000);
+}
 
 btnStart.addEventListener('click', startClick);
+//btnStop.addEventListener('click', stopClick);
