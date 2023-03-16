@@ -7,16 +7,19 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function colorSwitch() {
-  body.style.backgroundColor = getRandomHexColor();
-}
-
 btnStart.addEventListener('click', () => {
+  const colorSwitch = () => {
+    body.style.backgroundColor = getRandomHexColor();
+  };
   timerId = setInterval(() => {
-    console.log('to jest zmiana koloru:', colorSwitch);
+    console.log('to jest zmiana koloru:', colorSwitch());
   }, 1000);
+  btnStop.disabled = false;
+  btnStart.disabled = true;
 });
 
 btnStop.addEventListener('click', () => {
-  clearInterval(timerId);
+  console.log('stop:', clearInterval(timerId));
+  btnStart.disabled = false;
+  btnStop.disabled = true;
 });
