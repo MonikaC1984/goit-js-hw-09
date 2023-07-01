@@ -42,7 +42,7 @@ function startClick() {
 }
 
 function counting() {
-  timer = setInterval(() => {
+  let timer = setInterval(() => {
     result = chosenDate - new Date();
     console.log(result);
     const dateValue = convertMs(result);
